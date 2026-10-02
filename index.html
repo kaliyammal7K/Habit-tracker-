@@ -265,10 +265,10 @@ dialog::backdrop{background:rgba(20,16,50,.5);backdrop-filter:blur(3px)}
 }
 @media(max-width:960px){
   #sidebar{display:none}
-  .main{margin-left:0;padding:20px 16px 120px}
-  #mobnav{display:flex;position:fixed;left:50%;transform:translateX(-50%);bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:40;gap:2px;background:color-mix(in srgb,var(--card) 92%,transparent);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:24px;padding:8px;box-shadow:var(--shadow-lg);width:min(560px,calc(100% - 20px));justify-content:space-between}
-  #mobnav button{flex:1;border:0;background:none;border-radius:16px;padding:7px 2px;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:.6rem;font-weight:800;color:var(--mute)}
-  #mobnav button svg{width:21px;height:21px}
+  .main{margin-left:0;padding:20px 16px calc(128px + env(safe-area-inset-bottom,0px))}
+  #mobnav{display:flex;position:fixed;left:50%;transform:translateX(-50%);bottom:calc(10px + env(safe-area-inset-bottom,0px));z-index:40;gap:2px;background:color-mix(in srgb,var(--card) 92%,transparent);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:22px;padding:6px;box-shadow:var(--shadow-lg);width:min(560px,calc(100% - 20px));justify-content:space-between}
+  #mobnav button{flex:1;border:0;background:none;border-radius:14px;padding:6px 2px;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:.6rem;font-weight:800;color:var(--mute)}
+  #mobnav button svg{width:20px;height:20px}
   #mobnav button.on{background:var(--f-soft);color:var(--f)}
   .tiles{grid-template-columns:repeat(2,1fr)}
   .duo{grid-template-columns:1fr}
@@ -280,10 +280,32 @@ dialog::backdrop{background:rgba(20,16,50,.5);backdrop-filter:blur(3px)}
   .bgo{max-width:none}
 }
 @media(max-width:560px){
+  html,body{overflow-x:hidden}
   .tools .search{display:none}
-  .banner{flex-wrap:wrap}
+  .main{padding:16px 16px calc(128px + env(safe-area-inset-bottom,0px))}
+  .topbar{margin-bottom:14px}
+  .banner{flex-wrap:wrap;padding:16px;margin-bottom:14px}
   .bgo{width:100%}
   .hl h1{font-size:1.35rem}
+  .tiles{gap:12px;margin-bottom:14px}
+  .stat{padding:13px 14px}
+  .home{gap:12px}
+  .lcol,.rcol{gap:12px}
+  .card{padding:15px 16px}
+  .card>.hd{margin-bottom:10px}
+  .duo{gap:12px}
+  .seg{margin:4px 0 10px}
+  .wkc{margin:10px 0}
+  .bigrow{margin-top:6px}
+  .sub{margin-top:6px}
+  .mhd{margin-bottom:6px}
+  textarea{min-height:64px;margin-top:6px;padding:9px 12px}
+  .mini-moods{gap:6px}
+  .moods7{gap:6px;margin:10px 0 2px}
+  .mini-moods button,.moods7 button{width:36px;height:36px}
+  .saveRow{margin-top:8px}
+  .hb{padding:10px 11px;margin-bottom:8px}
+  .toast{max-width:calc(100vw - 28px)}
 }
 </style>
 </head>
