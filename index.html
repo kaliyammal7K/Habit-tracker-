@@ -131,7 +131,7 @@ button.pi svg{width:17px;height:17px;color:var(--mute);flex:none}
 
 /* ============ home grid ============ */
 .home{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(350px,470px);gap:16px;align-items:start}
-.lcol,.rcol{display:grid;gap:16px;min-width:0}
+.lcol,.rcol{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;min-width:0}
 .card{padding:19px 20px}
 .card>.hd{display:flex;align-items:center;gap:10px;margin-bottom:12px}
 .card>.hd h3{font-size:1.02rem;font-weight:800;display:flex;align-items:center;gap:9px}
@@ -260,7 +260,7 @@ dialog::backdrop{background:rgba(20,16,50,.5);backdrop-filter:blur(3px)}
 /* ============ responsive ============ */
 #mobnav{display:none}
 @media(max-width:1120px){
-  .home{grid-template-columns:1fr}
+  .home{grid-template-columns:minmax(0,1fr)}
   .search{width:min(300px,38vw)}
 }
 @media(max-width:960px){
@@ -305,6 +305,7 @@ dialog::backdrop{background:rgba(20,16,50,.5);backdrop-filter:blur(3px)}
   .mini-moods button,.moods7 button{width:36px;height:36px}
   .saveRow{margin-top:8px}
   .hb{padding:10px 11px;margin-bottom:8px}
+  .hb .tx p{white-space:normal;overflow:visible;text-overflow:clip}
   .toast{max-width:calc(100vw - 28px)}
 }
 </style>
