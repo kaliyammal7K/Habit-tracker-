@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Level-Up · 30-Day Challenge</title>
+<title>Level-Up · 60-Day Challenge</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -131,7 +131,7 @@ button.pi svg{width:17px;height:17px;color:var(--mute);flex:none}
 
 /* ============ home grid ============ */
 .home{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(350px,470px);gap:16px;align-items:start}
-.lcol,.rcol{display:grid;gap:16px;min-width:0}
+.lcol,.rcol{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;min-width:0}
 .card{padding:19px 20px}
 .card>.hd{display:flex;align-items:center;gap:10px;margin-bottom:12px}
 .card>.hd h3{font-size:1.02rem;font-weight:800;display:flex;align-items:center;gap:9px}
@@ -260,7 +260,7 @@ dialog::backdrop{background:rgba(20,16,50,.5);backdrop-filter:blur(3px)}
 /* ============ responsive ============ */
 #mobnav{display:none}
 @media(max-width:1120px){
-  .home{grid-template-columns:1fr}
+  .home{grid-template-columns:minmax(0,1fr)}
   .search{width:min(300px,38vw)}
 }
 @media(max-width:960px){
@@ -305,6 +305,7 @@ dialog::backdrop{background:rgba(20,16,50,.5);backdrop-filter:blur(3px)}
   .mini-moods button,.moods7 button{width:36px;height:36px}
   .saveRow{margin-top:8px}
   .hb{padding:10px 11px;margin-bottom:8px}
+  .hb .tx p{white-space:normal;overflow:visible;text-overflow:clip}
   .toast{max-width:calc(100vw - 28px)}
 }
 </style>
@@ -315,7 +316,7 @@ dialog::backdrop{background:rgba(20,16,50,.5);backdrop-filter:blur(3px)}
 <aside id="sidebar">
   <div class="brand">
     <img src="data:image/webp;base64,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" alt="Level-Up rocket logo">
-    <div><b>Level-Up</b><small>30-Day Challenge</small></div>
+    <div><b>Level-Up</b><small>60-Day Challenge</small></div>
   </div>
   <nav id="nav" aria-label="Main navigation"></nav>
   <div class="smas">
@@ -399,50 +400,94 @@ const ASSETS={"objects/calendar.png":"data:image/webp;base64,UklGRgYPAABXRUJQVlA
    data
 ============================================================ */
 const H=[
-{k:"comm", n:"Communication",           e:"🗣️", c:"#f97316", m:15, ic:"icons/community.png", tile:"var(--tile-purple)"},
-{k:"fe",   n:"Frontend",                e:"💻", c:"#6366f1", m:15, ic:"icons/laptop.png",    tile:"var(--tile-blue)"},
-{k:"ux",   n:"Product Design Thinking", e:"🎨", c:"#ec4899", m:15, ic:"icons/pencil.png",    tile:"#fce7f3"},
-{k:"self", n:"Face / Self-care",        e:"✨", c:"#10b981", m:10, ic:"icons/lotus.png",     tile:"#d1fae5"},{k:"track",n:"Track",e:"📝",c:"#0ea5e9",m:5,  ic:"icons/chart.png",     tile:"var(--tile-orange)"}
+{k:"comm", n:"Communication",           e:"🗣️", c:"#f97316", m:10, ic:"icons/community.png", tile:"var(--tile-purple)"},
+{k:"fe",   n:"Frontend / Coding",       e:"💻", c:"#6366f1", m:20, ic:"icons/laptop.png",    tile:"var(--tile-blue)"},
+{k:"ux",   n:"Product Design Thinking", e:"🎨", c:"#ec4899", m:20, ic:"icons/pencil.png",    tile:"#fce7f3"},
+{k:"self", n:"Self-care",               e:"🧴", c:"#10b981", m:10, ic:"icons/lotus.png",     tile:"#d1fae5"}
 ];
+
 const D=[
-["introduce yourself for 2 minutes and record it.","basic HTML structure — html, head, body, headings, paragraphs.","pick one app; identify its main user and main goal.","gentle facial massage + normal skincare/lip care.","why do I want to improve myself?"],
-["talk about your daily routine for 3 minutes.","headings, paragraphs, links and images; make a tiny page.","analyse the app home screen and identify the primary action.","Self-care + one learning note."],
-["learn/use 5 workplace sentences.","lists, buttons and forms.","find one confusing screen and write 3 problems.","Self-care + effort rating."],
-["explain what you worked on today.","CSS selectors, colors and fonts.","ask why each important element is there.","Self-care + one learning."],
-["speak about one thing you're good at.","margin, padding and border.","study an onboarding flow and identify each step's purpose.","Self-care + one learning."],
-["explain one Figma design in English.","width, height and display.","redesign one small section on paper/Figma.","Self-care + one learning."],
-["re-record your Day 1 introduction and compare.","build a tiny HTML/CSS profile card.","review your observations.","Self-care.",null,"Reflection: what became easier?"],
-["learn 5 design/work vocabulary words.","Flexbox basics.","study hierarchy — what do your eyes see first?"],
-["explain a design problem for 3 minutes.","Flexbox alignment + gap.","analyse spacing on a professional website/app."],
-["practise “I chose this because…”","Flexbox layout.","identify primary, secondary and tertiary actions."],
-["explain a problem + your solution.","CSS Grid basics.","study a form — labels, inputs, errors and CTA."],
-["tell a small story in English.","Grid columns, rows and gap.","study an empty state and why it exists."],
-["practise explaining design decisions naturally.","responsive basics.","compare mobile vs desktop for one product."],
-["record a 3-minute workplace conversation.","make your profile card responsive.","review your notes.","Self-care.",null,"Reflection: what improved?"],
-["explain a user flow in English.","JavaScript variables.","create a simple login/signup user flow."],
-["explain problem → solution.","JavaScript data types + basic operations.","improve your login flow."],
-["speak about your current work for 5 minutes.","if/else.","analyse validation/error states."],
-["answer “Why did you choose this design?”","functions.","create empty/error/success states."],
-["practise explaining feedback.","events.","identify usability issues in an existing screen."],
-["5-minute mock design interview.","button click interaction with JavaScript.","redesign one screen based on your findings."],
-["explain your redesign aloud.","combine HTML + CSS + basic JS.","review your best redesign.","Self-care.",null,"Reflection: what connected together?"],
-["explain the project problem in English.","set up project structure.","define user, problem, goal and main task."],
-["explain your user persona.","build HTML structure.","create the basic wireframe in Figma."],
-["explain your information architecture.","add CSS.","improve hierarchy + spacing."],
-["explain your primary CTA.","Flexbox/Grid layout.","improve interaction states."],
-["explain one design decision.","add basic JavaScript interaction.","think through loading/error/empty/success states."],
-["mini design interview.","make it responsive.","review the whole UX flow."],
-["present your project for 5 minutes.","fix one technical issue.","fix 3 UX issues."],
-["re-record your Day 1 introduction.","compare your first work with the mini project.","compare your Day 1 analysis with what you notice now.","Self-care.",null,"Reflection: what can I do now that I couldn't do 29 days ago?"],
-["15-minute mock interview — introduce yourself, explain a project, explain design decisions.","improve your mini project without a tutorial.","analyse a random app screen and propose an improvement.","Self-care.",null,"Final reflection: 30 DAYS COMPLETE — I kept showing up."]
+["introduce yourself for 2 minutes and record it.","HTML basics: what is HTML? html, head, body, h1 and p. Practice: create a basic HTML page about yourself.","learn what Product Design is; UI vs UX vs Product Design; what a Product Designer does. Practice: pick one app and identify its main user and main goal.","face massage + skincare."],
+["talk about your daily routine for 3 minutes.","h1 to h6, paragraphs, strong, em and br. Practice: create a simple About Me page.","learn user, customer and main user. Practice: pick one app and identify who the main user is.","10-minute walk or skincare."],
+["learn and speak 5 simple workplace sentences.","HTML links: a, href, internal and external links. Practice: create Home → About → Contact navigation.","learn what a user problem is; problem vs solution. Practice: write one real user problem without suggesting a solution.","face massage."],
+["explain what you worked on today.","HTML images: img, src and alt. Practice: create a profile section with an image.","learn user goals — functional and emotional. Practice: identify one functional and one emotional goal for an app user.","skincare."],
+["speak for 2 minutes about something you are good at.","HTML lists: ul, ol and li. Practice: create a product features list.","product vs feature; why features should solve user problems. Practice: pick one app feature and identify the problem it solves.","10-minute walk."],
+["explain one Figma design in English.","semantic HTML: header, main, section and footer. Practice: create a basic landing page structure.","user value and business value. Practice: identify one user benefit and one business benefit of a product.","face massage + skincare."],
+["re-record your Day 1 introduction and compare.","review HTML. Practice: build Header → Hero → About → Features → Footer.","review user, goal, problem and feature. Practice: analyse one app using all four.","choose: face massage, walk or skincare.",null,"Reflection: what became easier this week?"],
+["learn 5 design/work vocabulary words.","CSS introduction: what is CSS? inline, internal and external CSS. Practice: add CSS to your HTML page.","visual hierarchy: what does the user notice first? what is primary information?"],
+["explain one design problem for 3 minutes.","CSS selectors: element, class and ID. Practice: style different elements using selectors.","analyse spacing on a professional website/app."],
+["practise “I chose this because…”","CSS colours: color, background-color and HEX. Practice: create a simple colour palette.","learn primary, secondary and tertiary information. Practice: identify these on one app screen."],
+["explain a problem and your solution.","CSS typography: font-family, font-size, font-weight, line-height and text-align. Practice: create a simple typography hierarchy.","study a form: labels, inputs, CTA and errors."],
+["tell a small story in English.","CSS box model: content, padding, border and margin. Practice: change spacing around a card.","empty states: what is an empty state? why does it exist? what should the user do next?"],
+["explain one design decision.","CSS width, height, border and border-radius. Practice: create a simple card.","button states: default, hover, active and disabled."],
+["explain your profile card for 3 minutes.","build a personal profile card using HTML + CSS.","review hierarchy, spacing, typography and CTA.",null,"Reflection: what improved?"],
+["explain a simple user flow in English.","Flexbox: display:flex and why Flexbox. Practice: put two elements side by side.","learn what a user flow is: start point, action and end point."],
+["explain problem → solution.","Flexbox: flex-direction, row and column. Practice: create a vertical and horizontal layout.","analyse a login/signup flow."],
+["explain one design choice.","Flexbox: justify-content, center and space-between. Practice: align three cards.","primary vs secondary actions."],
+["explain a form in English.","Flexbox: align-items — center, start and end. Practice: vertically align content.","form UX: labels, inputs, CTA and errors."],
+["explain cognitive load simply.","Flexbox: gap and flex-wrap. Practice: create a wrapping card layout.","cognitive load: too many choices, too much information and mental effort."],
+["explain three UI states.","CSS Grid: display:grid, rows and columns. Practice: create a 2-column layout.","learn empty, error and success states."],
+["present your layout for 3 minutes.","build a 3-card layout using Flexbox or Grid.","review alignment, spacing, hierarchy and layout."],
+["explain responsive design.","CSS Grid: grid-template-columns and gap. Practice: create a 3-column layout.","what is responsive design?"],
+["explain mobile vs desktop.","media queries: @media and the mobile breakpoint. Practice: make a layout change on mobile.","compare mobile and desktop UX for one product."],
+["explain your navigation.","build a responsive navigation bar.","navigation: what should be visible? what can be hidden?"],
+["explain how content is organised.","make responsive cards.","information architecture basics: organisation, categories and content structure."],
+["explain primary vs secondary content.","CSS variables like --primary and --spacing. Practice: create simple colour and spacing variables.","content hierarchy."],
+["explain system feedback.","CSS states: :hover, :focus and :active.","feedback: what should happen after the user clicks something?"],
+["present your page for 3 minutes.","build a responsive landing page.","review desktop, tablet, mobile, navigation and hierarchy."],
+["explain what JavaScript does.","JavaScript introduction: what is JavaScript? HTML = structure, CSS = appearance, JS = behaviour.","product vs feature."],
+["explain one user goal.","JavaScript variables: let and const. Practice: create 3 simple variables.","user goals: what does the user want to achieve?"],
+["explain one user need.","JavaScript data types: string, number and boolean. Practice: create examples of each.","user needs vs wants."],
+["explain one product decision.","JavaScript operators: +, -, *, /, >, < and ===.","product decision making."],
+["explain a login flow.","JavaScript if, else and else if. Practice: create a simple login condition.","login experience."],
+["explain what a function does.","functions: function, parameters and return. Practice: create 2 simple functions.","reusable UI thinking."],
+["explain JavaScript in your own words.","review variables, data types, operators, conditions and functions. Practice: create an age checker, login checker and simple calculator.","review product thinking concepts."],
+["explain interaction design.","DOM basics: what is the DOM? querySelector().","interaction design: how does the user interact with the interface?"],
+["explain system feedback.","JavaScript textContent. Practice: change text on a webpage using JavaScript.","feedback."],
+["explain a CTA.","JavaScript events: click and addEventListener(). Practice: make a button respond to a click.","CTA behaviour."],
+["explain UI states.","JavaScript classList: add, remove and toggle. Practice: change a button/card state.","active and inactive states."],
+["explain one interaction.","show/hide elements with JavaScript. Practice: create a simple dropdown or modal interaction.","modal and dropdown behaviour."],
+["explain form validation.","simple form handling: input, submit and validation.","form UX."],
+["present your project.","build a simple login page using HTML, CSS and JavaScript with email, password, login button, error message and success message.","review the complete login experience."],
+["explain a product problem.","JavaScript arrays: what is an array? create an array and access items.","what is a product problem?"],
+["explain a problem statement.","arrays: add, update and remove items.","problem framing."],
+["create and explain one How Might We question.","array map(). Practice: transform an array into something new.","How Might We questions."],
+["explain why one feature is more important than another.","array filter(). Practice: filter a list of items.","prioritization."],
+["explain MVP in simple English.","array find(). Practice: find one item from an array.","MVP: what is the smallest useful version of a product?"],
+["explain one product trade-off.","JavaScript objects: what is an object? properties and values.","product trade-offs."],
+["present your product decision.","review arrays, map, filter, find and objects. Practice: create simple product data using arrays + objects.","choose what should be included in an MVP."],
+["explain accessibility.","review semantic HTML.","accessibility basics: semantic HTML, clear labels, keyboard access and contrast."],
+["explain why keyboard access matters.","focus states and keyboard interaction.","keyboard navigation."],
+["explain colour contrast.","accessible buttons and links.","colour contrast and accessibility."],
+["explain accessible forms.","accessible forms: label, input and button.","form accessibility."],
+["explain an error state.","JavaScript form validation.","good error messages: clear, helpful, specific and actionable."],
+["explain a loading state.","create a simple loading state using JavaScript.","loading states: what should the user understand while waiting?"],
+["present your UX findings.","improve the login project for accessibility.","perform a mini UX audit: accessibility, forms, errors, loading and feedback."],
+["explain what a Design System is.","review CSS variables.","what is a Design System?"],
+["explain design tokens.","create colour variables and spacing variables.","design tokens."],
+["explain reusable components.","create reusable CSS classes.","components and consistency."],
+["present your final mini project for 5 minutes.","build one small webpage without following a tutorial using HTML, CSS, a responsive layout and a basic JavaScript interaction.","final review: product design, user problems, user goals, user flows, UX, visual hierarchy, accessibility, product thinking, MVP and design systems.","choose your favourite self-care activity.",null,"Final reflection: what can I do now that I couldn't do on Day 1?"]
 ];
-const WEEKS=["Week 1 — Just Start","Week 2 — Build the Skill","Week 3 — Connect Everything","Week 4 — Become a Product Designer Who Can Build"];
+
+const WEEKS=["Week 1 — Just Start","Week 2 — CSS Basics","Week 3 — CSS Layout","Week 4 — Responsive Design + UX","Week 5 — JavaScript Basics","Week 6 — JavaScript + UI Interaction","Week 7 — Product Thinking","Week 8 — Accessibility + Better UX","Week 9 — Design System Basics"];
+
 const RULES=[
-["🚫","No zero days.","On exhausting days, do a tiny version: 2 min English + 2 min frontend + 2 min UX + 2 min self-care."],
-["🔁","Never restart.","If you miss a day, simply continue the next day. No waiting for Monday."],
-["⏱️","Don't chase motivation.","Start the timer first; motivation can come after starting."],
-["✅","Track only one thing.","Use a simple 30-day checklist."],
-["🎧","Make it enjoyable.","Tea/coffee, headphones, a clean desk, Figma/VS Code open, phone away."]];
+["🎯","60-Day Main Goal","Build stronger Product Design thinking, beginner frontend skills, communication confidence, and a consistent self-care routine."],
+["🎨","Product Design Goal","Improve my ability to understand users, identify problems, analyse products, think through UX decisions, and make better product decisions."],
+["💻","Frontend Goal","Learn HTML, CSS, responsive design and beginner JavaScript slowly and practically."],
+["🗣️","Communication Goal","Become more confident speaking in English and explaining my work, design decisions, problems and solutions clearly."],
+["🧴","Self-Care Goal","Build a simple daily routine with face massage, skincare, walking or simple movement."]];
+const BY60=[
+"Explain Product Design concepts in my own words",
+"Analyse a real product and identify UX problems",
+"Explain my design decisions confidently",
+"Create responsive HTML/CSS pages",
+"Understand basic JavaScript",
+"Add simple JavaScript interactions",
+"Build a small frontend project",
+"Present my work in English",
+"Maintain a consistent daily learning routine"];
+
 const DQ=[
 ["We are what we repeatedly do. Excellence, then, is not an act, but a habit.","Will Durant"],
 ["It does not matter how slowly you go as long as you do not stop.","Confucius"],
@@ -465,22 +510,22 @@ const LT=["Sprout 🌱","Explorer 🧭","Builder 🛠️","Designer 🎨","Pro �
 /* ============================================================
    state
 ============================================================ */
-const KEY="ch30v1";
+const KEY="ch60v1";
 let S={start:null,done:{},notes:{}};
 try{const r=localStorage.getItem(KEY);if(r)S=Object.assign(S,JSON.parse(r))}catch(e){}
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
 const today=()=>{const n=new Date();return Date.UTC(n.getFullYear(),n.getMonth(),n.getDate())/864e5};
 if(!S.start){S.start=today();save()}
-const cur=()=>Math.min(30,Math.max(1,Math.floor(today()-S.start)+1));
-const wkOf=n=>Math.min(3,Math.floor((n-1)/7));
+const cur=()=>Math.min(60,Math.max(1,Math.floor(today()-S.start)+1));
+const wkOf=n=>Math.min(8,Math.floor((n-1)/7));
 const taskText=(n,i)=>{const d=D[n-1];if(i<4)return d[i]||"Self-care.";return d[4]||"Tick today's checklist and write your reflection."};
 const isDone=(n,k)=>!!(S.done[n]&&S.done[n][k]);
 const full=n=>H.every(h=>isDone(n,h.k));
-const doneCount=()=>{let c=0;for(let i=1;i<=30;i++)if(full(i))c++;return c};
-function streaks(){let best=0,run=0;for(let i=1;i<=30;i++){if(full(i)){run++;best=Math.max(best,run)}else run=0}
+const doneCount=()=>{let c=0;for(let i=1;i<=60;i++)if(full(i))c++;return c};
+function streaks(){let best=0,run=0;for(let i=1;i<=60;i++){if(full(i)){run++;best=Math.max(best,run)}else run=0}
   const c=cur();let s=0,i=full(c)?c:c-1;while(i>=1&&full(i)){s++;i--}return{s,best}}
 const status=n=>{const c=cur();if(full(n))return"done";if(n===c)return"cur";if(n<c)return"miss";return"up"};
-const hprog=k=>{let c=0;for(let i=1;i<=30;i++)if(isDone(i,k))c++;return c};
+const hprog=k=>{let c=0;for(let i=1;i<=60;i++)if(isDone(i,k))c++;return c};
 const esc=s=>String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;");
 const $=id=>document.getElementById(id);
 
@@ -489,7 +534,7 @@ function toggleHabit(n,k){
   S.done[n]=S.done[n]||{};S.done[n][k]=!S.done[n][k];const was=full(n);save();
   if(full(n)&&!was)toast("Day "+n+" complete! 🎉");
 }
-const xpTotal=()=>{let x=0;for(let n=1;n<=30;n++)H.forEach(h=>{if(isDone(n,h.k))x+=h.m});return x};
+const xpTotal=()=>{let x=0;for(let n=1;n<=60;n++)H.forEach(h=>{if(isDone(n,h.k))x+=h.m});return x};
 
 /* ============================================================
    theme
@@ -525,8 +570,8 @@ function dayView(n){
     + H.map((h,i)=>`<button class="dtask ${isDone(n,h.k)?"done":""}" data-n="${n}" data-k="${h.k}" ${ed?"":"disabled"}>
         <span class="cb">${isDone(n,h.k)?I.check:""}</span>
         <span><small><img src="${ASSETS[h.ic]}" alt="">${h.n} · ${h.m} min</small><p>${esc(taskText(n,i))}</p></span></button>`).join("")
-    + `<div class="bar" style="--k:var(--green);margin:14px 0 8px"><i style="width:${tot*20}%"></i></div>
-       <p class="sub">${tot}/5 tasks done${ed?"":" · unlocks on Day "+n}</p>`
+    + `<div class="bar" style="--k:var(--green);margin:14px 0 8px"><i style="width:${tot*25}%"></i></div>
+       <p class="sub">${tot}/4 tasks done${ed?"":" · unlocks on Day "+n}</p>`
     + (ed?`<h3 style="margin:16px 0 0;font-size:1rem">Daily reflection</h3>
        <span class="label">What I learned today</span>
        <textarea data-r="learn" data-n="${n}" placeholder="Write your thoughts...">${esc(nt.learn||"")}</textarea>
@@ -556,12 +601,12 @@ $("dB").oninput=e=>{const r=e.target.dataset.r;if(r){const n=e.target.dataset.n;
    home (Today tab)
 ============================================================ */
 function homeHTML(){
-  const c=cur(),dc=doneCount(),{s}=streaks(),p=Math.round(dc/30*100);
+  const c=cur(),dc=doneCount(),{s}=streaks(),p=Math.round(dc/60*100);
   const tm=H.reduce((a,x)=>a+(isDone(c,x.k)?x.m:0),0);
   const tc=H.filter(x=>isDone(c,x.k)).length, nx=H.find(x=>!isDone(c,x.k));
-  const w=wkOf(c),w0=w*7+1,w1=w===3?30:w0+6;let wc=0,wd="";
+  const w=wkOf(c),w0=w*7+1,w1=w===8?60:w0+6;let wc=0,wd="";
   for(let n=w0;n<=w1;n++){const f=full(n);if(f)wc++;wd+=`<span class="${f?"d":""} ${n===c?"c":""}" data-d="${n}" title="Day ${n}">${f?"✓":n}</span>`}
-  const bs=streaks().best,MS=[["First day completed",dc,1],["7-day streak",bs,7],["15-day progress",dc,15],["30-day completion",dc,30]],nm=MS.find(m=>m[1]<m[2]);
+  const bs=streaks().best,MS=[["First day completed",dc,1],["7-day streak",bs,7],["15-day progress",dc,15],["30-day progress",dc,30],["45-day progress",dc,45],["60-day completion",dc,60]],nm=MS.find(m=>m[1]<m[2]);
   const note=S.notes[c]||{};
   return `
   <div class="banner">
@@ -577,7 +622,7 @@ function homeHTML(){
   </div>
 
   <div class="tiles">
-    <div class="stat card"><span class="sic" style="background:var(--tile-purple)"><img src="${ASSETS["objects/calendar.png"]}" alt=""></span><div><b>${c}/30</b><span>Current day</span></div></div>
+    <div class="stat card"><span class="sic" style="background:var(--tile-purple)"><img src="${ASSETS["objects/calendar.png"]}" alt=""></span><div><b>${c}/60</b><span>Current day</span></div></div>
     <div class="stat card"><span class="sic" style="background:var(--tile-orange)"><img src="${ASSETS["icons/flame.png"]}" alt=""></span><div><b>${s}</b><span>Day streak</span></div></div>
     <div class="stat card"><span class="sic" style="background:var(--tile-gold)"><img src="${ASSETS["icons/medal.png"]}" alt=""></span><div><b>${dc}</b><span>Completed</span></div></div>
     <div class="stat card"><span class="sic" style="background:var(--tile-blue)"><img src="${ASSETS["icons/stopwatch.png"]}" alt=""></span><div><b>${tm}/60</b><span>Minutes today</span></div></div>
@@ -589,10 +634,10 @@ function homeHTML(){
         <div class="hav">
           <span class="bav"><img src="${ASSETS["mascots/love.png"]}" alt=""></span>
           <h3>Today's progress</h3>
-          <span class="end" style="color:var(--f);font-weight:900;font-size:1.05rem">${tc}/5</span>
+          <span class="end" style="color:var(--f);font-weight:900;font-size:1.05rem">${tc}/4</span>
         </div>
         <div class="seg">${H.map(x=>`<i class="${isDone(c,x.k)?"on":""}"></i>`).join("")}</div>
-        <div class="pfoot"><span>${5-tc} habit${5-tc===1?"":"s"} left</span><a data-act="next">${nx?"Next: "+esc(nx.n)+" →":"All done! 🎉"}</a></div>
+        <div class="pfoot"><span>${4-tc} habit${4-tc===1?"":"s"} left</span><a data-act="next">${nx?"Next: "+esc(nx.n)+" →":"All done! 🎉"}</a></div>
       </section>
 
       <section class="card">
@@ -606,7 +651,7 @@ function homeHTML(){
         <section class="card">
           <h3 style="font-size:1rem;font-weight:800">Overall progress</h3>
           <div class="bigrow"><b>${p}%</b><div class="bar"><i style="width:${p}%"></i></div></div>
-          <p class="sub">${p}% of the challenge · ${30-dc} days to go</p>
+          <p class="sub">${p}% of the challenge · ${60-dc} days to go</p>
         </section>
         <section class="card">
           <div class="mhd">${I.flag} Next milestone</div>
@@ -654,19 +699,19 @@ function homeHTML(){
 ============================================================ */
 function calHTML(){
   const c=cur();
-  return `<h2 class="tabtitle">${I.cal} 30-Day Calendar</h2>
+  return `<h2 class="tabtitle">${I.cal} 60-Day Calendar</h2>
   <section class="card">
-    <div class="cgrid">${Array.from({length:30},(_,i)=>{const n=i+1,st=status(n);
+    <div class="cgrid">${Array.from({length:60},(_,i)=>{const n=i+1,st=status(n);
       return `<button class="day ${st}" data-d="${n}" aria-label="Day ${n} ${st}">${n}<small>${st==="done"?"✓":st==="miss"?"missed":st==="cur"?"today":""}</small></button>`}).join("")}</div>
     <div class="legend"><span><i style="background:var(--green)"></i>Completed</span><span><i style="border:2px solid var(--f)"></i>Current</span><span><i style="background:#ef4444"></i>Missed</span><span><i style="background:color-mix(in srgb,var(--mute) 20%,transparent)"></i>Upcoming</span></div>
     <p class="sub" style="margin-top:12px">Tap any day to see its tasks. Missed days can still be filled in — never restart.</p>
   </section>`;
 }
 function planHTML(){
-  const c=cur();const list=[];for(let n=1;n<=30;n++)if(filter==="all"||n>=c)list.push(n);let lastW=-1;
+  const c=cur();const list=[];for(let n=1;n<=60;n++)if(filter==="all"||n>=c)list.push(n);let lastW=-1;
   return `<h2 class="tabtitle">${I.rocket} Challenges</h2>
   <section class="card">
-    <div class="chips"><button class="chip ${filter==="up"?"on":""}" data-f="up">Upcoming</button><button class="chip ${filter==="all"?"on":""}" data-f="all">All 30 days</button></div>
+    <div class="chips"><button class="chip ${filter==="up"?"on":""}" data-f="up">Upcoming</button><button class="chip ${filter==="all"?"on":""}" data-f="all">All 60 days</button></div>
     ${list.length?"":`<p class="sub">You've reached the final day — no upcoming challenges left. 🎉</p>`}
     ${list.map(n=>{const w=wkOf(n);const hd=w!==lastW?`<h3 class="wkhead">${esc(WEEKS[w])}</h3>`:"";lastW=w;
       return hd+`<button class="dcard ${full(n)?"done":""}" data-d="${n}">
@@ -676,16 +721,16 @@ function planHTML(){
   </section>`;
 }
 function progHTML(){
-  const {s,best}=streaks();const dc=doneCount(),p=Math.round(dc/30*100);
+  const {s,best}=streaks();const dc=doneCount(),p=Math.round(dc/60*100);
   const xp=xpTotal(),lv=Math.floor(xp/300)+1;
   const refl=Object.keys(S.notes).filter(n=>S.notes[n].learn||S.notes[n].note||S.notes[n].mood).sort((a,b)=>b-a)
     .map(n=>{const o=S.notes[n];return `<div class="refl"><b>Day ${n}</b> ${o.mood||""}<p>${esc([o.learn,o.note].filter(Boolean).join(" — "))}</p></div>`}).join("");
   return `<h2 class="tabtitle">${I.chart} Progress</h2>
   <div class="pg">
-    ${H.map(x=>{const v=hprog(x.k);return `<section class="card"><h3><img src="${ASSETS[x.ic]}" alt="">${esc(x.n)}<span>${v}/30</span></h3><div class="bar" style="--k:${x.c};margin-top:11px"><i style="width:${v/30*100}%"></i></div><p class="sub">${x.m} min a day · ${Math.round(v/30*100)}%</p></section>`}).join("")}
+    ${H.map(x=>{const v=hprog(x.k);return `<section class="card"><h3><img src="${ASSETS[x.ic]}" alt="">${esc(x.n)}<span>${v}/60</span></h3><div class="bar" style="--k:${x.c};margin-top:11px"><i style="width:${v/60*100}%"></i></div><p class="sub">${x.m} min a day · ${Math.round(v/60*100)}%</p></section>`}).join("")}
     <section class="card"><h3 style="font-weight:800">🔥 Streak</h3><p class="sub" style="margin-top:8px">Current: <b style="color:var(--ink)">${s} days</b> · Best: <b style="color:var(--ink)">${best} days</b></p></section>
     <section class="card"><h3 style="font-weight:800">⚡ Level ${lv} · ${LT[Math.min(lv-1,5)]}</h3><div class="bar" style="--k:var(--green);margin-top:11px"><i style="width:${xp%300/3}%"></i></div><p class="sub">${xp} XP · 1 minute done = 1 XP · ${300-xp%300} XP to next level</p></section>
-    <section class="card"><h3 style="font-weight:800">🏁 Challenge</h3><div class="bigrow"><b>${p}%</b><div class="bar"><i style="width:${p}%"></i></div></div><p class="sub">${dc}/30 days complete</p></section>
+    <section class="card"><h3 style="font-weight:800">🏁 Challenge</h3><div class="bigrow"><b>${p}%</b><div class="bar"><i style="width:${p}%"></i></div></div><p class="sub">${dc}/60 days complete</p></section>
   </div>
   <section class="card" style="margin-top:16px"><h3 style="font-weight:800;margin-bottom:6px">Reflections</h3>
     ${refl||`<p class="sub">No reflections yet. Write one on today's page.</p>`}
@@ -694,7 +739,7 @@ function progHTML(){
 }
 function awardsHTML(){
   const dc=doneCount(),{s,best}=streaks();
-  const AWR=[["🌱","First day completed",dc>=1],["🔥","7-day streak",best>=7],["🚀","15-day progress",dc>=15],["🏆","30-day completion",dc>=30]];
+  const AWR=[["🏆","First day completed",dc>=1],["🔥","7-day streak",best>=7],["🌱","15-day progress",dc>=15],["🚀","30-day progress",dc>=30],["💪","45-day progress",dc>=45],["🏆","60-day completion",dc>=60]];
   return `<h2 class="tabtitle">${I.trophy} Awards</h2>
   <section class="card">
     <p class="sub" style="margin-bottom:14px">🔥 Streak: <b style="color:var(--ink)">${s}</b> · Best: <b style="color:var(--ink)">${best}</b></p>
@@ -702,10 +747,13 @@ function awardsHTML(){
   </section>`;
 }
 function rulesHTML(){
-  return `<h2 class="tabtitle">${I.doc} 30-Day Rulebook</h2>
+  return `<h2 class="tabtitle">${I.doc} My Goals 🎯</h2>
+  <p class="sub" style="margin:-8px 0 14px">What I want to improve during my 60-Day Level-Up Challenge.</p>
   <section class="card">
     ${RULES.map((r,i)=>`<div class="rule"><span class="ic">${r[0]}</span><div><h3>${i+1}. ${esc(r[1])}</h3><p>${esc(r[2])}</p></div></div>`).join("")}
-    <p style="font-weight:800;color:var(--f);margin-top:14px">Remember: measure these 30 days by whether you showed up — not by how much you learned.</p>
+    <p style="font-weight:800;color:var(--f);margin:16px 0 4px">🏆 By Day 60, I Want To Be Able To...</p>
+    ${BY60.map(b=>`<div class="rule"><span class="ic">✅</span><div><h3 style="font-size:.95rem">${esc(b)}</h3></div></div>`).join("")}
+    <p style="font-weight:800;color:var(--f);margin-top:14px">Don't try to become perfect in 60 days. Just become a little better every day.</p>
   </section>`;
 }
 
@@ -715,7 +763,7 @@ function rulesHTML(){
 function render(){
   nav();
   const c=cur();
-  $("heroSub").textContent=`30-Day Challenge · Day ${c} of 30`;
+  $("heroSub").textContent=`60-Day Challenge · Day ${c} of 60`;
   const q=DQ[Math.floor(today())%DQ.length];
   const M=$("main");
   if(tab==="home"){
@@ -804,11 +852,11 @@ function openKebab(btn){
 const NOTIF_KEY="ch30notifread";
 function notifData(){
   const c=cur(),dc=doneCount(),{s}=streaks();
-  const MS=[["First day completed",dc,1],["7-day streak",streaks().best,7],["15-day progress",dc,15],["30-day completion",dc,30]];
+  const MS=[["First day completed",dc,1],["7-day streak",streaks().best,7],["15-day progress",dc,15],["30-day progress",dc,30],["45-day progress",dc,45],["60-day completion",dc,60]];
   const nm=MS.find(m=>m[1]<m[2]);
   const items=[];
   items.push(full(c)
-    ?{ic:"icons/medal.png",t:`Day ${c} complete! 🎉`,d:"All 5 habits done — see you tomorrow."}
+    ?{ic:"icons/medal.png",t:`Day ${c} complete! 🎉`,d:"All 4 habits done — see you tomorrow."}
     :{ic:"icons/stopwatch.png",t:`Day ${c} is live`,d:`${H.filter(x=>!isDone(c,x.k)).length} habits left · ${H.reduce((a,x)=>a+(isDone(c,x.k)?0:x.m),0)} minutes to go.`});
   if(!full(c)&&status(c-1||1)==="miss"&&c>1)items.push({ic:"icons/sprout.png",t:"Missed a day? Never restart.",d:"Just continue today — tiny versions count."});
   items.push({ic:"icons/flame.png",t:`Streak: ${s} day${s===1?"":"s"}`,d:s?"Keep the chain alive.":"Complete Day "+c+" to start a streak."});
@@ -832,7 +880,7 @@ $("bellBtn").addEventListener("click",e=>{
 });
 function acctHTML(){
   const dark=document.documentElement.dataset.theme==="dark";
-  return `<div class="ph"><b>Tamil</b><small>Level-Up · 30-Day Challenge</small></div>
+  return `<div class="ph"><b>Tamil</b><small>Level-Up · 60-Day Challenge</small></div>
   <button class="pi" data-acct="theme">${dark?I.sun+" Light mode":I.moon+" Dark mode"}</button>
   <button class="pi" data-acct="reset">${I.reset} Reset all progress</button>`;
 }
@@ -858,7 +906,7 @@ document.addEventListener("click",e=>{if(!e.target.closest(".pop")&&!e.target.cl
 const sIn=$("searchInput"),sRes=$("sres");
 function buildIndex(){
   const idx=[];
-  for(let n=1;n<=30;n++)idx.push({t:"Day "+n,d:WEEKS[wkOf(n)]+" · "+[0,1,2,3].map(i=>taskText(n,i)).join(" "),ic:I.cal,run:()=>showDay(n)});
+  for(let n=1;n<=60;n++)idx.push({t:"Day "+n,d:WEEKS[wkOf(n)]+" · "+[0,1,2,3].map(i=>taskText(n,i)).join(" "),ic:I.cal,run:()=>showDay(n)});
   H.forEach(h=>idx.push({t:h.n,d:h.m+" min a day · today's habit",img:ASSETS[h.ic],run:()=>{tab="home";render();const row=document.querySelector(`.hb[data-k="${h.k}"]`);if(row){row.classList.add("flashHl");row.scrollIntoView({block:"center",behavior:"smooth"})}}}));
   Object.keys(S.notes).forEach(n=>{const o=S.notes[n];const txt=[o.learn,o.note].filter(Boolean).join(" ");if(txt)idx.push({t:"Note · Day "+n,d:txt.slice(0,70),ic:I.book,run:()=>showDay(+n)})});
   return idx;
